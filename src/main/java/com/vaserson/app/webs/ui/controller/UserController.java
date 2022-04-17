@@ -1,6 +1,8 @@
 package com.vaserson.app.webs.ui.controller;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -29,7 +31,7 @@ public class UserController{
 	
 	Map<String, UserResp> users;
 	
-	@Autowired
+	//@Autowired
 	UserService userService;
 	
     @GetMapping
@@ -67,8 +69,7 @@ public class UserController{
 							})
 	public ResponseEntity<UserResp> createUser(@Valid @RequestBody UserDetailsRequestModel userDetails) 
 	{
-		/* Перенесено в UserServiceImpl.java
-		 * 		
+	
 		
     	UserResp returnValue = new UserResp();
     	returnValue.setEmail(userDetails.getEmail());
@@ -80,8 +81,7 @@ public class UserController{
     	
     	if(users == null) users = new HashMap<>();
     	users.put(userId, returnValue);
-    	*/
-    	UserResp returnValue = userService.createUser(userDetails);
+
     	
     	return new ResponseEntity<UserResp>(returnValue, HttpStatus.OK);
 	}

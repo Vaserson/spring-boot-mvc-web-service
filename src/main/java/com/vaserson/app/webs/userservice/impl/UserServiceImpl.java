@@ -11,15 +11,16 @@ import com.vaserson.app.webs.ui.model.request.UserDetailsRequestModel;
 import com.vaserson.app.webs.ui.model.response.UserResp;
 import com.vaserson.app.webs.userservice.UserService;
 
-@Service
+//@Service
 public class UserServiceImpl implements UserService{
 	
 	Map<String, UserResp> users;
 	Utils utils;
 	
 	public UserServiceImpl() {}
+
 	
-	@Autowired
+	//@Autowired
 	public UserServiceImpl(Utils utils) 
 	{
 		this.utils = utils;
